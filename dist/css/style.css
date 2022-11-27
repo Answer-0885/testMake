@@ -1,0 +1,833 @@
+@font-face {
+    font-family: 'Graphik';
+    src: url("../fonts/Graphik-Regular-Web.eot") format("eot"),
+      url("../fonts/Graphik-Regular-Web.woff2") format("woff2"),
+      url("../fonts/Graphik-Regular-Web.woff") format("woff"),
+      url("../fonts/Graphik-Regular-Web.woff") format("truetype");
+  }
+  @font-face {
+    font-style: italic;
+    font-weight: normal;
+    font-family: 'Graphik';
+    src: url("../Graphik-RegularItalic-Web.eot") format("eot"),
+      url("../fonts/Graphik-RegularItalic-Web.woff2") format("woff2"),
+      url("../fonts/Graphik-RegularItalic-Web.woff") format("woff"),
+      url("../fonts/Graphik-RegularItalic-Web.ttf") format("truetype");
+  }
+  @font-face {
+    font-weight: 500;
+    font-style: normal;
+    font-family: 'Graphik';
+    src: url("../fonts/Graphik-Medium-Web.eot") format("eot"),
+      url("../fonts/Graphik-Medium-Web.woff2") format("woff2"),
+      url("../fonts/Graphik-Medium-Web.woff") format("woff"),
+      url("../fonts/Graphik-Medium-Web.ttf") format("truetype");
+  }
+  
+  
+  @font-face {
+    font-weight: 700;
+    font-style: normal;
+    font-family: 'Graphik';
+    src: url("../fonts/Graphik-Bold-Web.eot") format("eot"),
+      url("../fonts/Graphik-Bold-Web.woff2") format("woff2"),
+      url("../fonts/Graphik-Bold-Web.woff") format("woff"),
+      url("../fonts/Graphik-Bold-Web.ttf") format("truetype");
+    }
+  
+  
+  @font-face {
+    font-weight: 900;
+    font-style: normal;
+    font-family: 'Graphik';
+    src: url("../fonts/Graphik-Black-Web.eot") format("eot"),
+    url("../fonts/Graphik-Black-Web.woff2") format("woff2"),
+    url("../fonts/Graphik-Black-Web.woff") format("woff"),
+    url("../fonts/Graphik-Black-Web.ttf") format("truetype");
+  }
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    min-height: 100vh;
+    margin-top: 32px;
+    color: #1B1B1B;
+    display: grid;
+    grid-template-columns: repeat(12, minmax(60px 80px)); 
+    grid-column-gap: 32px;
+    grid-template-rows: 75px 1fr 68px; 
+    border: 1px solid red;
+    grid-template-areas:
+      'header header header header'
+        'menu content content content'
+       'footer footer footer footer'
+
+}
+
+.overlay{
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    background-color: rgba(26, 25, 25, 0.7); /*затемнение*/
+  }
+
+.container{
+    width: 100vw;
+    padding: 0 64px; 
+    border: 1px solid red;
+} 
+
+.wrap{
+    width: 592px;
+    border: 1px solid red;
+}
+
+.header {
+    grid-area: header;
+    border: 1px solid red;
+    display: flex;
+}
+
+
+
+.header-block{
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-column-gap: 32px;
+    width: 1344px;
+}  
+
+.header-block__logo{
+    display: flex;
+    justify-content: space-between;
+}
+
+.header-block__name{
+    font-family: 'Graphik';
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    margin-left: 24px;
+    border: 1px solid red;
+    width: 130px;
+}
+
+.header-block__name span{
+    color:#7D7D7D;
+}
+
+.header-block__ico-menu{
+    padding-top: 8px;
+} 
+
+
+
+/* Бургер меню */
+.burger-menu{
+    display: none;
+    position: absolute;
+    background-image: url('../img/bg.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 1344px;
+    height: 756px;
+    left: 0%;
+    top: 0%;
+}
+
+.burger-menu__close{
+    position: absolute;
+    top: 28px;
+    right: 63px;
+    cursor: pointer;
+}
+
+.burger-menu__left-block{
+    max-width: 100vw;
+    height: auto;
+    width: 760px;
+    height: 740px;
+    background-color: #ffffff;
+    margin: 8px 36rem 8px 8px;
+}
+
+.burger-menu__header{
+    display: flex;
+}
+
+.burger-menu__logo{
+    margin-left: 56px;
+    margin-top: 24px;
+}
+
+.burger-menu__description{
+    margin-left: 64px;
+    margin-top: 35px;
+}
+
+.burger-menu__task{
+    font-family: Graphik;
+    font-size: 14px;
+    line-height: 20px;
+    color: #7D7D7D;  
+}
+
+.burger-menu__description>h2{
+    font-family: Graphik;
+    font-size: 32px;
+    line-height: 40px; 
+    margin-top: 60px; 
+    color: #1B1B1B;
+}
+
+.burger-menu__for-me{
+    font-family: Graphik;
+    width: 384px;
+    font-size: 16px;
+    line-height: 24px;
+    margin-top: 24px;
+    color: #1B1B1B;
+}
+
+.burger-menu__phone-block{
+    margin-top: 32px;
+}
+
+.burger-menu__phone{
+    font-family: Graphik;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 28px;
+    color:#1B1B1B;
+    text-decoration: none;
+}
+
+.burger-menu__socseti{
+    display: flex;
+    margin-top: 300px;
+    border: 1px solid red;
+}
+
+.burger-menu__socseti-ico{
+    border: 1px solid red;
+    bottom: 0px;
+}
+
+.burger-menu__socseti-text{
+    font-family: Graphik;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    padding-top: 20px;
+    padding-left: 20px;
+
+}
+.burger-menu__socseti-text>a{
+    text-decoration: none;
+}
+
+
+
+
+/* Меню слева */
+.nav {
+    grid-area: menu;
+    border: 1px solid red;
+    margin-top: 173px;
+    margin-left: 64px;
+  }
+  
+.menu_link{
+    text-decoration: none;
+    color: #1B1B1B;
+}
+.menu_item{
+    font-family: 'Graphik';
+    margin-bottom: 16px;
+    list-style-type: none;
+    font-size: 14px;
+    line-height: 20px;
+}
+
+/* Блок описания */
+.description {
+    grid-area: content;
+    border: 1px solid red;
+  }
+  
+.description__h1{
+    font-family: 'Graphik';
+    font-weight: 900;
+    font-size: 48px;
+    line-height: 56px;
+    border: 1px solid red;
+}
+
+.description__level{
+    font-family: 'Graphik';
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 32px; 
+    margin-top: 16px;
+    margin-bottom: 64px;
+    border: 1px solid red;  
+}
+
+.description_text{
+    font-family: 'Graphik';
+    font-size: 16px;
+    line-height: 24px;
+    border: 1px solid red;
+}
+
+.description__h2{
+    font-family: 'Graphik';
+    font-size: 32px;
+    line-height: 40px;
+    border: 1px solid red;
+    margin-top: 80px;
+    margin-bottom: 24px;
+}
+
+.description__h3{
+    font-family: 'Graphik';
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 32px;
+    margin-top: 48px;
+}
+
+/* Экран Десктопа (1200+)*/
+@media (min-width: 1200px){
+    .tablet{
+        display: none;
+    }
+    .Phone{
+        display: none;
+    }
+    .typography_phone{
+        display: none;
+    }
+}
+
+/* Экран Планшета (736+) */
+@media (min-width: 736px) and (max-width:1199px){
+    body{
+        grid-template-columns: repeat(8, minmax(56px 88px));
+    }
+    .desktop{
+        display: none;
+    }
+    .Phone{
+        display: none;
+    }
+    .typography_phone{
+        display: none;
+    }
+}
+
+/* Экран телефона */
+@media (min-width: 320px) and (max-width:735px){
+    body{
+        grid-template-columns: repeat(4, minmax(56px 88px));
+        grid-column-gap: 24px;
+    }
+    .desktop{
+        display: none;
+    }
+    .tablet{
+        display: none;
+    }
+    .description__h1{
+        font-size: 32px;
+        line-height: 40px;
+    }
+    .description__h2{
+        font-size: 28px;
+        line-height: 36px;
+    }
+    .description__h3{
+        font-size: 20px;
+        line-height: 28px;
+    }
+    .typography_desktop{
+        display: none; 
+    }
+    .burger-menu__left-block{   
+        margin: 8px 100px 8px 8px;
+    }
+}
+
+ .desktop_block{
+    border: 1px solid blue; 
+    display: grid;
+    grid-template-columns: repeat(4, 176px);
+    grid-column-gap: 32px;
+
+}
+.desktop__content{
+    border: 1px solid blue;    
+}
+
+.desktop__content{
+    margin-top: 30px;
+}
+
+.desktop_content-mod{
+    font-family: Graphik;
+    font-size: 14px;
+    line-height: 20px;
+    color:#7D7D7D;
+}
+
+.desktop_number-mod{
+    font-family: Graphik;
+    font-size: 24px;
+    line-height: 32px;
+    margin-top: 8px;
+}
+
+.desktop__img{
+    margin-top: 48px;
+}
+
+/* Раздел Типографика для Десктоп */
+.typography__desktop-telephone{
+    display: flex;
+    gap: 32px;
+    margin-top: 48px;
+}
+
+.typography__desktop, .typography__telephone {
+    padding-bottom: 14px;
+    cursor: pointer;
+}
+
+.typography__desktop-telephone_change{
+    font-family: Graphik;
+    font-weight: 500;
+    border-bottom: 2px solid #3E29E3;
+}
+
+.typography__hr{
+    width: 904px;
+    color: #CBCBCC;
+}
+
+.typography__grid{
+    display: grid;
+    grid-template-columns: 280px 592px;
+    grid-template-rows: repeat(8, 1fr);
+    grid-row-gap: 48px;
+    grid-column-gap: 32px;
+    margin-top: 48px;
+}
+
+.typography__header{
+    font-family: Graphik;
+    font-size: 14px;
+    line-height: 20px;
+    color: #7D7D7D;
+}
+
+.typography__text{
+    font-family: Graphik;
+}
+
+/* Заголовок h1 для Десктоп */
+.typography_h1{
+    font-size: 48px;
+    line-height: 56px;
+    font-weight: bold;    
+}
+
+/* Заголовок h2 для Десктоп */
+.typography_h2{
+    font-size: 32px;
+    line-height: 40px;
+    font-weight: bold;   
+}
+
+/* Заголовок h3 для Десктоп */
+.typography_h3{
+    font-size: 24px;
+    line-height: 32px;
+    font-weight: 500; 
+}
+
+.typography_h4{
+    font-size: 18px;
+    line-height: 28px;
+    font-weight: 500;
+}
+
+.typography_lead{
+    font-size: 24px;
+    line-height: 32px;
+    font-weight: 300;
+}
+
+.typography_p18{
+    font-size: 18px;
+    line-height: 28px;
+    font-weight: 300;
+}
+
+.typography_p16{
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 300;
+}
+
+.typography_p14{
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 300;
+}
+
+/* Типографика для телефонов */
+/* .typography_phone {
+    display: none;
+} */
+
+/* Заголовок h1 для телефонов */
+.typography_h1-phone{
+    font-family: Graphik;
+    font-size: 32px;
+    line-height: 40px;
+    font-weight: bold;   
+}
+
+/* Заголовок h2 для телефонов */
+.typography_h2-phone{
+    font-family: Graphik;
+    font-size: 28px;
+    line-height: 36px;
+    font-weight: bold;   
+}
+
+/* Заголовок h3 для телефонов */
+.typography_h3-phone{
+    font-family: Graphik;
+    font-size: 20px;
+    line-height: 28px; 
+    font-weight: 500; 
+}
+
+
+/* Раздел UI */
+.UI__hint{
+    font-family: Graphik;
+    font-size: 12px;
+    line-height: 20px;
+    color: #7D7D7D;
+    margin-top: 68px;
+    opacity: 0;
+}
+
+/* Если ошибка в инпуте*/
+.UI__hint_error{
+    color: #E80F3B;
+}
+
+.UI__error{
+    opacity: 0;
+    font-family: Graphik;
+    font-size: 14px;
+    line-height: 20px;
+    margin-top: 6px;
+}
+
+.UI__input{
+    box-sizing: border-box;
+    width: 280px;
+    border: transparent;
+    border-bottom: 2px solid #AEADAE;
+    padding-bottom: 6px;
+    margin-top: 2px;
+    text-decoration: none;
+    cursor: pointer; 
+}
+
+.UI__input_error{
+    border-bottom: 2px solid #E80F3B;
+    box-shadow: 0 2px 0 0 #E80F3B;
+}
+
+.UI__input::placeholder{
+    font-family: Graphik;
+    font-size: 16px;
+    line-height: 24px;
+    color:#1B1B1B;
+}
+.UI__input:hover{
+    border-color: #3E29E3;
+}
+
+.UI__input:focus{
+    outline: none;
+    border-bottom: 2px solid #3E29E3;
+    box-shadow: 0 2px 0 0 #3E29E3;
+}
+
+/* Выпадающий список */
+
+.drop-down-list{
+    margin-top: 70px;
+}
+
+.drop-down-list_margin-top{
+    margin-top: 24px;
+}
+
+.drop-down-list__input{
+    box-sizing: border-box;
+    width: 280px;
+    border: transparent;
+    border-bottom: 2px solid #AEADAE;
+    padding-bottom: 6px;
+    margin-top: 2px;
+    text-decoration: none;
+    cursor: pointer; 
+}
+
+.drop-down-list__hint{
+    opacity: 0;
+    font-family: Graphik;
+    font-size: 12px;
+    line-height: 20px;
+    color:#7D7D7D;
+    margin-top: 48px;
+}
+
+.drop-down-list__input::placeholder{
+    font-family: Graphik;
+    font-size: 16px;
+    line-height: 24px;
+    color:#1B1B1B;
+}
+
+.drop-down-list__input:hover{
+    border-color: #3E29E3;
+}
+
+.drop-down-list__input:focus{
+    outline: none;
+    border-bottom: 2px solid #3E29E3;
+}
+
+/* Раздел кнопка */
+.button-block{
+    margin-top: 184px;
+}
+
+.button-block__button{
+    background: linear-gradient(45deg, #DD80ED 0%, #3D28E3 100%);
+    height: 56px;
+    width: 148px;
+    border-radius: 32px;
+    margin-top: 76px;
+    font-family: Graphik;
+    font-size: 16px;
+    line-height: 24px;
+    color: #FFFFFF;
+    border: none;
+}
+
+.button-block__button:hover{
+    background: linear-gradient(225deg, #DD80ED 0%, #3D28E3 100%);
+    cursor: pointer;
+}
+
+
+/* Раздел чекбокс, радиобаттон */
+.checkbox-radio__grid{
+    display: grid;
+    margin-top: 32px;
+    grid-template-columns: 344px 344px;
+    grid-column-gap: 24px;;
+}
+
+.checkbox-radio__label-checkbox{
+    font-family: Graphik;
+    font-size: 16px;
+    line-height: 24px;
+    margin-bottom: 30px;
+}
+
+
+input[type="checkbox"], input[type="radio"] {
+    display: none;
+  }
+
+  /* стили для метки */
+.checkbox-radio__label-checkbox,
+.checkbox-radio__label-radio {
+    cursor: pointer;
+    font-family: Graphik;
+    font-size: 16px;
+    line-height: 24px;
+    vertical-align: middle;
+  }
+   
+  /* формируем внешний вид чекбокса в псевдоэлементе before */
+  .checkbox-radio__label-checkbox:before,
+  .checkbox-radio__label-radio:before {
+    content: " ";
+    display: inline-block;
+    font: 20px/23px Arial;
+    margin-right: 15px;
+    position: relative;
+    text-align: center;
+    width: 24px;
+    height: 24px;
+    background: #FFF;
+    border: 2px solid #AEADAE;
+    border-image: initial;
+    vertical-align: middle;
+  }
+ /* hover */
+ .checkbox-radio__input-checkbox:hover + 
+ .checkbox-radio__label-checkbox:before, 
+ .checkbox-radio__input-radio:hover + 
+ .checkbox-radio__label-radio:before {
+    content: "";
+    border-color: #3E29E3;
+  }
+   
+  /* checked */
+  .checkbox-radio__input-checkbox:checked + .checkbox-radio__label-checkbox:before {
+    content: "\2714";
+    color:white;
+    background-color:#3E29E3;
+    border-color: #3E29E3;
+  }
+
+  /* Радиокнопка */
+  .checkbox-radio__right{
+    margin-left: 32px;
+  }
+
+  .checkbox-radio__label-radio:before {
+    content: "";
+    border-radius: 50%;
+  } 
+
+  .checkbox-radio__input-radio:checked + .checkbox-radio__label-radio:before {
+    content: "\1F535";
+    color:#3E29E3;
+    font: 12px/24px Arial;
+    border-color: #3E29E3;
+    border-radius: 50%;
+  }
+
+
+
+
+  /* Аккордеон */
+  .accord{
+    margin-top: 64px;
+    width: 56.5rem;
+}
+
+.accord__element-content {
+	display: none; 
+	padding: 20px;
+    font-family: Graphik;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+/* Появление текста с анимацией */
+.accord{
+    margin-bottom: 160px;
+}
+.accord__element {
+	margin-bottom: 6px;
+    position: relative;
+    border: transparent;
+    border-bottom: 1px solid #AEADAE;
+}
+.accord__title {
+	cursor: pointer;
+	padding: 24px 0px 15px 0px;
+    font-family: Graphik;
+    font-size: 16px;
+    line-height: 24px;
+	position: relative;
+	transition: all 200ms ease-out;
+    cursor: pointer;
+}
+
+.accord__element-content{
+    cursor: pointer; 
+}
+
+.accord__svg {
+    content: url('../img/Path.svg');
+    position: absolute;
+    right: 0;
+    top: 24px;
+    /* transform: rotate(180deg); */
+}
+
+.accord__svg.transform{
+    transform: rotate(180deg); 
+}
+
+.accord__title:hover {
+	color:#1B1B1B;
+    font-weight: 500;
+}
+
+.accord__element:hover {
+    border-color:#3D28E3
+}
+
+.bottom-border{
+    border-bottom: 2px solid #3E29E3;
+} 
+
+.accord__content > div:last-of-type {
+	margin-bottom: 0;
+}
+
+.open-text{
+    display: block; 
+    animation: openText 0.5s ease-in-out;
+}
+  
+  @keyframes openText {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 0.8;
+    }
+  }
+
+  .head-color{
+    font-family: Graphik;
+    font-weight: 500;
+    color:#3E29E3;
+  }
+
+
+
+  
+/* Подвал */
+.footer {
+    grid-area: footer;
+    border: 1px solid red;
+  }
+.footer__win{
+    font-family: 'Graphik';
+    font-size: 14px;
+    line-height: 20px;
+    text-align: center;
+}
