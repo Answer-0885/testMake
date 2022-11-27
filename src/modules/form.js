@@ -14,7 +14,7 @@ const form = () => {
       }
    });
 
-   // При событии change обработчик проверяет введённый e-mail на присутствие @
+   // При событии change обработчик проверяет введённый e-mail на присутствие знака @
    input.addEventListener('change', (event)=> {
       event.preventDefault();
    

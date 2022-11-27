@@ -7,7 +7,7 @@ const accordeon = ()=> {
    const svg = document.querySelectorAll('.accord__svg');
 
 
-   
+   // Добавляем необходимые классы при клике на элементы аккордеона. Секции раскрываются плавно.
    accordElement.forEach((btn, i) => {
         btn.addEventListener('click', () => {       
            plus[i].classList.toggle('open-list');
